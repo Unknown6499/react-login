@@ -1,0 +1,24 @@
+.footer{
+     width: 100%;
+    background-color: #222831;
+    font-size: 1.4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+    padding: 1rem;
+}
+.address{
+    text-align: right;
+}
+@media screen and (max-width:640px) {
+    .footer{
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 10px;
+    }
+    .address{
+    text-align: center;
+}
+}
