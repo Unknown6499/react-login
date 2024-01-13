@@ -26,9 +26,7 @@ const Navbar:React.FC= () => {
         </li>
         {!login && (
           <li>
-            <NavLink to="/login" >
-              Login
-            </NavLink>
+            <NavLink to="/login">Login</NavLink>
           </li>
         )}
         {login && (
@@ -37,7 +35,9 @@ const Navbar:React.FC= () => {
               <NavLink to="/dashboard">Dashboard</NavLink>
             </li>
             <li>
-              <button onClick={logOutHandler}>LogOut</button>
+              <button onClick={logOutHandler} className="buttonsLogin">
+                LogOut
+              </button>
             </li>
           </>
         )}

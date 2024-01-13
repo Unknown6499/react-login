@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import "../assets/styles/Login.css";
+import { NavLink } from "react-router-dom";
 interface LoginProps {}
 const Login: React.FC<LoginProps> = () => {
   const [username, setUsername] = useState<string>("");
@@ -73,7 +74,15 @@ const Login: React.FC<LoginProps> = () => {
           />
         </div>
         {error && <p style={{ color: "red" }}>{error}</p>}
-        <button onClick={handleLogin}>Login</button>
+        <button onClick={handleLogin} className="buttonsLogin">
+          Login
+        </button>
+        <p>Don't have an account? Please Signup</p>
+        <button>
+          <NavLink to="/signup" className="buttonsLogin">
+            Signup
+          </NavLink>
+        </button>
       </div>
     </>
   );

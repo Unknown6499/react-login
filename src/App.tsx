@@ -3,10 +3,9 @@ import {  RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home'
 import RootLayout from './pages/RootLayout'
 import Login from './pages/Login'
-import Signup from './pages/Signup'
-import Dashboard from './pages/Dashboard'
+import Signup, { action as SignupAction } from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
 import { checkAuthLoader, tokenLoader } from "./utility/auth";
-
 const App:React.FC = ()=>{
   const [authToken, setAuthToken] = useState<string | null>(null);
   useEffect(() => {
@@ -42,6 +41,7 @@ const App:React.FC = ()=>{
         {
           path: "/signup",
           element: <Signup />,
+          action: SignupAction,
         },
       ],
     },
